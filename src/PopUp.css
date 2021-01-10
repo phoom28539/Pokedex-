@@ -1,0 +1,152 @@
+
+/* .outside-modal {
+position: absolute;
+} */
+.modal {
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    width: 94%;
+    height: 94%;
+    transform : translate(-50%, -50%);
+    background-color: #ffffff;
+    /* padding: 20px; */
+    z-index: 1000;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 1px 1px 3px 2px  #474444;
+    /* overflow: auto; */
+   
+  }
+    #style-1::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    #style-1::-webkit-scrollbar
+    {
+        width: 15px;
+        background-color: #F5F5F5;
+    }
+
+    #style-1::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #555;
+    }
+
+    /* .Input {
+        position: absolute;
+    }
+     */
+
+  /* .position-search{
+      position: fixed;
+  } */
+  header {
+      position: sticky;
+      top: 0;
+      background-color:#ffffff ;
+  }
+
+  .searchbar {
+      width: 100%;
+      height: 60px;
+      font-family: 'Gaegu', cursive;
+      font-size: 50px;
+      /* margin: 50px; */
+      margin: 10px;
+      border-color: #e6e6e6;
+      outline: 0;
+      
+      /* position: fixed; */
+  }
+
+  #searchimg {
+      position: absolute;
+      top: 9px;
+      right: 5px;
+      width:62px;
+      height: 62px;
+  }
+  .card-container {
+      margin: 23px;
+      background-color: #f3f4f7;
+      padding: 10px;
+      height: 245px;
+      box-shadow: 1px 1px 4px 2px  #d5d6dc;;
+  }
+
+  .card-container:hover {
+    margin: 23px;
+    background-color: #f3f4f7;
+    padding: 10px;
+    height: 245px;
+    box-shadow: 1px 1px 3px 2px  #aeaeae;
+}
+  .left-image {
+      /* margin :15px; */
+      float: left;
+      
+      height: 245px;
+  }
+  .img {
+      margin-left: 10px;
+      height: 240px;
+      object-fit: contain;
+  }
+  /* font-family: 'Gaegu', cursive; */
+
+  .right-information {
+    float: right;
+    width: 75%;
+    height: 245px;
+    /* padding-right: 20px; */
+    
+  }
+
+  .name {
+    font-family: 'Gaegu', cursive;
+    font-size: 40px;
+    /* margin-bottom: 20px; */
+    font-weight: normal;
+    text-transform: uppercase;
+    
+  }
+  #R {
+      margin-top: 10px;
+  }
+  #add{
+    float: right;
+    margin-right: 20px;
+    font-family: 'Atma', cursive;
+    font-size: 30px;
+    text-decoration: none;
+    color: #dc7777;
+  }
+
+  #label {
+    
+    font-family: 'Atma', cursive;
+    font-size: 25px;
+    float: left;
+    height: 30px;
+    
+  }
+
+ 
+
+  .emoji{
+      width: 45px;
+      height:45px;
+      margin-top: 10px;
+      margin-left: 2px;
+      
+  }
+  
+    meter::-webkit-meter-bar {background: #e4e4e4;} /*background color of bar*/
+    meter::-webkit-meter-optimum-value {background: #f3701a;}
+    

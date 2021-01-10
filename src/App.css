@@ -1,0 +1,128 @@
+.title {
+    text-align: center;
+    font-size: 60px;
+    margin: 0;
+}
+
+.App {
+    height: 724px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.bottom-bar {
+    box-shadow: 1px 1px 2px 2px  #d9333387;
+    background-color: #ec5656;
+    /* margin-bottom: 100px; */
+    position: absolute;
+    bottom: 0;
+    width: 1024px;
+    height: 90px;
+    
+}
+
+.bottom-circle {
+    background-color: #ec5656;
+    position: absolute;
+    /* margin-bottom: 100px; */
+    bottom: 0;
+    border-radius: 50%;
+    border: none;
+    width: 150px;
+    height: 140px;
+    margin-left: 437px;
+    overflow: hidden;
+    
+}
+
+
+
+.plus {
+    font-family: 'Atma', cursive;
+    text-decoration: none;
+    
+    /* bottom: 0; */
+    top: -10px;
+    /* margin-left: 480px; */
+    margin-left: 48.185px;
+    font-size: 107px;
+    color: #ffffff;
+    
+}
+
+
+
+  .overlay {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 200ms;
+    background-color: #000000a3;
+    
+    
+}
+
+.container2{
+   margin-bottom: 50px;
+}
+
+
+.card-container2 {
+    display: inline-block;
+    background-color: #f3f4f7;
+    height: auto;
+    width: 47%;
+    padding:10px 0px 5px 0px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 4px 2px  #d5d6dc;;
+    
+}
+
+.card-container2:hover {
+    display: inline-block;
+    background-color: #f3f4f7;
+    height:auto;
+    width: 47%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 3px 2px  #aeaeae;
+    
+}
+
+.left-image2 {
+    float: left;
+    height: 260px;
+}
+
+.img2 {
+    /* margin-left: 10px; */
+    height: 260px;
+    object-fit: contain;
+}
+
+.right-information2 {
+    float: right;
+    width: 57%;
+    height: auto;
+    padding-top:10px ;
+    /* padding-right: 20px; */
+    
+  }
+  .name2 {
+    font-family: 'Gaegu', cursive;
+    font-size: 35px;
+    font-weight: normal;
+    text-transform: uppercase;
+    
+  }
+  #label2 {
+    
+    font-family: 'Atma', cursive;
+    font-size: 20px;
+    float: left;
+    height: 30px;
+    
+  }
