@@ -8,7 +8,30 @@
     height: 724px;
     overflow-x: hidden;
     overflow-y: scroll;
+    
 }
+#style-1::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+#style-1::-webkit-scrollbar
+{
+    width: 15px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+
+
 
 .bottom-bar {
     box-shadow: 1px 1px 2px 2px  #d9333387;
@@ -97,7 +120,7 @@
     height: 260px;
 }
 
-.img2 {
+#img2 {
     /* margin-left: 10px; */
     height: 260px;
     object-fit: contain;
@@ -126,3 +149,19 @@
     height: 30px;
     
   }
+
+  .emoji{
+    width: 45px;
+    height:45px;
+    margin-top: 10px;
+    margin-left: 2px;
+    
+}
+
+  .emojiplus{
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}

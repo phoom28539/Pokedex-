@@ -14,8 +14,17 @@ class PopUp extends Component {
         this.state = {
             Info2 : this.props.Info,
             searchkey:'',
-            showadd : [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-            
+            showadd :[]
+        }
+    }
+
+    componentDidMount(){
+        this.setdefaultshowadd();
+    }
+
+    setdefaultshowadd(){
+        for(let i=0;i<this.props.Info.length;i++){
+            this.state.showadd[i]=false;
         }
     }
     
@@ -107,38 +116,38 @@ class PopUp extends Component {
             return detail.name.toLowerCase().indexOf(this.state.searchkey.toLowerCase()) !== -1 || detail.type.toLowerCase().indexOf(this.state.searchkey.toLowerCase()) !== -1;
         })
         return (
-                <div className="outside-modal">
-               <div className="modal" id="style-1">
-                   <header>
-                       <center>
-                        <input className="searchbar" type='text' value={this.state.searchkey}  placeholder="Find pokemon"  onChange={e => this.setsearch(e.target.value)}/>
-                        <img id="searchimg"src={searchimg}></img>
-                      </center>
-                    </header>
+                
+            <div className="modal" id="style-1">
+                <header>
+                    <center>
+                    <input className="searchbar" type='text' value={this.state.searchkey}  placeholder="Find pokemon"  onChange={e => this.setsearch(e.target.value)}/>
+                    <img id="searchimg"src={searchimg}></img>
+                    </center>
+                </header>
                    
-                    <div className="content">
-                    {filterinfo.map((info,index) => (
-                        <div className="card-container"  onMouseEnter = {() => this.setshowadd(index)} onMouseLeave={() => this.setnotshowadd(index)} >
-                            <div className="left-image">
-                                <img className='img'src={info.imageUrl} />
-                            </div>
-                            <div className="right-information">
-                                <span className="name">{info.name}</span>
-
-                                {this.state.showadd[index] && (<a id="add" href="##" onClick={() => this.transfertopokedex(index,info.name)}>Add</a>)}
-
-                                <div id="R"><div id="label">HP </div><ProgressBar  bgcolor='#f3701a' completed={this.setHp(info.hp)} ></ProgressBar></div>
-                                <div id="R"><div id="label">STR </div><ProgressBar  bgcolor='#f3701a' completed={this.getlength(info.attacks)*50} ></ProgressBar></div>
-                                <div id="R"><div id="label">WEAK </div><ProgressBar  bgcolor='#f3701a' completed={this.getlength(info.weaknesses)*100} ></ProgressBar></div>
-                                
-                                <div id="R">{this.printemoji(this.setHp(info.hp),this.getdamage(info.attacks),this.getlength(info.weaknesses))}</div>
-                                
-                            </div>
+                <div className="content">
+                {filterinfo.map((info,index) => (
+                    <div className="card-container"  onMouseEnter = {() => this.setshowadd(index)} onMouseLeave={() => this.setnotshowadd(index)} >
+                        <div className="left-image">
+                            <img className='img'src={info.imageUrl} />
                         </div>
-                    ))}
+                        <div className="right-information">
+                            <span className="name">{info.name}</span>
+
+                            {this.state.showadd[index] && (<a id="add" href="##" onClick={() => this.transfertopokedex(index,info.name)}>Add</a>)}
+
+                            <div id="br"><div id="label">HP </div><ProgressBar  bgcolor='#f3701a' completed={this.setHp(info.hp)} ></ProgressBar></div>
+                            <div id="br"><div id="label">STR </div><ProgressBar  bgcolor='#f3701a' completed={this.getlength(info.attacks)*50} ></ProgressBar></div>
+                            <div id="br"><div id="label">WEAK </div><ProgressBar  bgcolor='#f3701a' completed={this.getlength(info.weaknesses)*100} ></ProgressBar></div>
+                            
+                            <div id="br">{this.printemoji(this.setHp(info.hp),this.getdamage(info.attacks),this.getlength(info.weaknesses))}</div>
+                            
+                        </div>
+                    </div>
+                ))}
                 </div>
             </div>
-            </div>
+            
            
             
        

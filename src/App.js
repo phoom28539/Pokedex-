@@ -4,6 +4,7 @@ import './App.css'
 import PopUp from './PopUp' 
 import ProgressBar from './progressbar2.js'
 import axios from 'axios'
+import pluss from './pluss.png'
 import cute from './cute.png'
 const COLORS = {
   Psychic: "#f8a5c2",
@@ -22,15 +23,23 @@ const COLORS = {
 class App extends Component {
 
   state = {
-    seen:false,
-    showx : [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+    seen:false,  //seen modal?
+    showx : [],  //show x in each card
     pokedex:[],
     Info: []
   };
 
-  componentDidMount(){ //ทำงานหลังrender กรณีไม่มีการupdate state
+  componentDidMount(){ 
     this.getdata();
+    this.setdefaultshowx();
   }
+
+  setdefaultshowx(){
+    for(let i =0;i<this.state.pokedex.length;i++){
+      this.state.pokedex[i]=false;
+    }
+  }
+
   getdata(){
       let URL="http://localhost:3030/api/cards"
       axios.get(URL).then(res => { 
@@ -121,10 +130,20 @@ class App extends Component {
       
       let x= Math.ceil(((hp/10)+(dmg/10)+10-(weakness))/5)
       let emoji= [];
-      for(let i=0;i<x;i++){
+      if(x>5){
+        x=5;
+        for(let i=0;i<x;i++){
+          emoji.push(<img className='emoji'src={cute} />);
+         }
+        emoji.push(<img className='emojiplus'src={pluss} />);
+        return emoji;
+      }else{
+        for(let i=0;i<x;i++){
           emoji.push(<img className='emoji'src={cute} />);
       }
-      return emoji
+        return emoji
+      }
+      
   }
 
   render() {
@@ -137,15 +156,15 @@ class App extends Component {
           {this.state.pokedex.map((info,index)=>(
             <div className="card-container2" onMouseEnter = {() => this.setshowx(index)} onMouseLeave={() => this.setnotshowx(index)}  >
               <div className="left-image2">
-                  <img className='img2'src={info.imageUrl} />
+                  <img id='img2'src={info.imageUrl} />
               </div>
               <div className="right-information2">
                   <span className="name2">{info.name}</span>
                   {this.state.showx[index] && (<a id="add" href="##" onClick={() => this.transfertosearchlist(index,info.name)}>X</a>)}
-                  <div id="R"><div id="label2">HP </div><ProgressBar  bgcolor='#f3701a' completed={this.setHp(info.hp)} ></ProgressBar></div>
-                  <div id="R"><div id="label2">STR </div><ProgressBar  bgcolor='#f3701a' completed={this.getlength(info.attacks)*50} ></ProgressBar></div>
-                  <div id="R"><div id="label2">WEAK </div><ProgressBar  bgcolor='#f3701a' completed={this.getlength(info.weaknesses)*100} ></ProgressBar></div>
-                  <div id="R">{this.printemoji(this.setHp(info.hp),this.getdamage(info.attacks),this.getlength(info.weaknesses))}</div>
+                  <div id="br"><div id="label2">HP </div><ProgressBar  bgcolor='#f3701a' completed={this.setHp(info.hp)} ></ProgressBar></div>
+                  <div id="br"><div id="label2">STR </div><ProgressBar  bgcolor='#f3701a' completed={this.getlength(info.attacks)*50} ></ProgressBar></div>
+                  <div id="br"><div id="label2">WEAK </div><ProgressBar  bgcolor='#f3701a' completed={this.getlength(info.weaknesses)*100} ></ProgressBar></div>
+                  <div id="br">{this.printemoji(this.setHp(info.hp),this.getdamage(info.attacks),this.getlength(info.weaknesses))}</div>
               </div>
           </div>
           ))}
